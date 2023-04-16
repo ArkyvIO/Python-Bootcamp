@@ -1,3 +1,3 @@
 # Day 2
 ## Tip Calculator
-Again, another simple program to calculate an appropriate tip.
+Again, another simple program. This one calculates an appropriate tip.
