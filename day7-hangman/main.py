@@ -2,6 +2,94 @@ import random
 import os
 import string
 
+hangman_Ascii = '''
+ _                                             
+| |                                            
+| |__   __ _ _ __   __ _ _ __ ___   __ _ _ __  
+| '_ \ / _` | '_ \ / _` | '_ ` _ \ / _` | '_ \ 
+| | | | (_| | | | | (_| | | | | | | (_| | | | |
+|_| |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|_| |_|
+                    __/ |                      
+                   |___/          
+'''
+
+score_Ascii_0 = '''
+      _______
+     |/      |
+     |      
+     |      
+     |       
+     |      
+     |
+ ____|___
+'''
+
+score_Ascii_1 = '''
+      _______
+     |/      |
+     |      (_)
+     |      
+     |      
+     |      
+     |
+ ____|___
+'''
+
+score_Ascii_2 = '''
+      _______
+     |/      |
+     |      (_)
+     |       |
+     |       |
+     |      
+     |
+ ____|___
+'''
+
+score_Ascii_3 = '''
+      _______
+     |/      |
+     |      (_)
+     |      \|
+     |       |
+     |      
+     |
+ ____|___
+'''
+
+score_Ascii_4 = '''
+      _______
+     |/      |
+     |      (_)
+     |      \|/
+     |       |
+     |      
+     |
+ ____|___
+'''
+
+score_Ascii_5 = '''
+      _______
+     |/      |
+     |      (_)
+     |      \|/
+     |       |
+     |      / 
+     |
+ ____|___
+'''
+
+score_Ascii_6 = '''
+      _______
+     |/      |
+     |      (_)
+     |      \|/
+     |       |
+     |      / \\
+     |
+ ____|___
+'''
+
 # Assign bool variable for game over and play again
 playAgain = 1
 gameOver = 0
@@ -35,6 +123,27 @@ while playAgain:
         # Clear screen
         os.system("cls" if os.name == "nt" else "clear")
 
+        # Logo
+        print(hangman_Ascii)
+
+        # Hangman Ascii
+        if strikes == 0:
+            print(score_Ascii_0)
+        elif strikes == 1:
+            print(score_Ascii_1)
+        elif strikes == 2:
+            print(score_Ascii_2)
+        elif strikes == 3:
+            print(score_Ascii_3)
+        elif strikes == 4:
+            print(score_Ascii_4)
+        elif strikes == 5:
+            print(score_Ascii_5)
+        elif strikes == 6:
+            print("Wait... what?")
+        else:
+            print("Wait... what?")
+
         # Is guess already used? Bool placeholder until guess made.
         acceptable = 0
 
@@ -66,12 +175,19 @@ while playAgain:
         else:
             strikes += 1
 
-        if strikes == 5:
+        if strikes == 6:
             gameOver = 1
+            os.system("cls" if os.name == "nt" else "clear")
+            print(hangman_Ascii)
+            print(score_Ascii_6)
             print("YOU LOSE!")
+            print(f"The word you were looking for was {chosen_word}!")
 
         if " _ " not in display:
+            os.system("cls" if os.name == "nt" else "clear")
+            print(hangman_Ascii)
             print("YOU WIN!")
+            print(f"You guessed it! The word was {chosen_word}")
             gameOver = 1
 
     # See if user wants to play again
