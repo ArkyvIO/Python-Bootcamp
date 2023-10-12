@@ -48,7 +48,7 @@ playAgain = 1  # Play again bool
 while playAgain:
     while not gameOver:
         if scoreUser > 0 or scoreComp > 0:
-            print(f"The current score is {scoreUser} (YOU) to {scoreComp} (COMP)1")
+            print(f"The current score is {scoreUser} (YOU) to {scoreComp} (COMP)")
         choiceUser = int(
             input(
                 "Best 3 out of 5! Please choose 1 for Rock, 2 for Paper, and 3 for Scissors: "
