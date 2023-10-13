@@ -1,7 +1,13 @@
 direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
 text = input("Type your message:\n").lower()
-shift = int(input("Type the shift number:\n"))
 
+acceptShift = False
+while not acceptShift:
+    shift = int(input("Type the shift number:\n"))
+    if shift < 1 or shift > 25:
+        print("That shift is less than 1 or greater than 25, which will not work. Try again.")
+    else:
+        acceptShift = True
 
 # Function called 'encrypt' that takes the 'text' and 'shift' as inputs.
 def encrypt(text, shift):
