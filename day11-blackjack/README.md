@@ -1,6 +1,6 @@
 
 # Day 11
 
-## Blackjack!
+## Blackjack
 
 A blackjack game
