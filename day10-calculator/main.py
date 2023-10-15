@@ -44,11 +44,6 @@ while continue_Calc == True:
     while not str(num1).isnumeric() or not is_float(str(num1)): # We need to convert to strings or we get errors checking if numberic or float
         num1 = input("You entered a non-number, please try again: ")
 
-    num2 = input("What's the second number?: ") # Get second number, we will always need this
-
-    while not str(num2).isnumeric() or not is_float(str(num2)):
-        num2 = input("You entered a non-number, please try again: ")
-
     print("Available operators: ")
 
     # Show all available operators for use in the dictionary
@@ -60,6 +55,11 @@ while continue_Calc == True:
     operator_Symbol = input("Please enter an operator to use: ")
 
     operator_Accepted = False  # Boolean for error checking input
+
+    num2 = input("What's the second number?: ") # Get second number, we will always need this
+
+    while not str(num2).isnumeric() or not is_float(str(num2)):
+        num2 = input("You entered a non-number, please try again: ")
 
     while not operator_Accepted:
         for x in operations:
