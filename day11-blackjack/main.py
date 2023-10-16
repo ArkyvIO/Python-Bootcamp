@@ -16,8 +16,19 @@ def shuffle_cards(num_Decks):
 
 def get_Points(hand):
     points = 0
+    aces = 0
     for card in hand:
-        points += deck_of_cards[card]
+        if deck_of_cards[card] == 1:
+            aces += 1
+        else:
+            points += deck_of_cards[card]
+    
+    for ace in range(aces):
+        if (points + 11) > 21:
+            points += 1
+        else:
+            points += 11
+
     return points
 
 def show_Score(player_Cards, computer_Cards, computer_Turn):
@@ -44,17 +55,28 @@ def clear_Screen():
 
 print("Welcome to BlackJack!") # Print welcome screen
 print("--------------------")
+time.sleep(1)
+print("Shuffling and dealing cards...")
+time.sleep(2)
+clear_Screen()
+
+num_Decks = 2 # We will use 2 decks unless the player wants one, choice to be implemented later
+deck = shuffle_cards(num_Decks) # Shuffle the deck
+shuffle_Length = len(deck) / 3
 
 while play_Again: # We will stop the program if the player doesn't want to play again, but need to start the loop at least once
     computer_Turn = False # The player will go first, so computer_Turn should be false
     player_Turn = True # The player will go first, so player_Turn should be true
-    num_Decks = 2 # We will use 2 decks unless the player wants one, choice to be implemented later
     busted = False # Boolean for if player busts
-
-    deck = shuffle_cards(num_Decks) # Shuffle the deck
 
     player_Cards = [] # Initialize an empty list for the player
     computer_Cards = [] # Initialize an empty list for the computer
+
+    if len(deck) < shuffle_Length:
+        clear_Screen()
+        print("Deck low, returning cards to deck and shuffling...")
+        time.sleep(1)
+        deck = shuffle_cards(num_Decks)
 
     # Two cards for the player
     for _ in range(2):
@@ -81,27 +103,45 @@ while play_Again: # We will stop the program if the player doesn't want to play 
                 computer_Turn = True
         else:
             clear_Screen()
+            show_Score(player_Cards, computer_Cards, computer_Turn)
             print("BUSTED")
 
     # Computer phase
     while computer_Turn:
+        clear_Screen()
         show_Score(player_Cards, computer_Cards, computer_Turn)
         while get_Points(computer_Cards) < 17:
             computer_Cards.append(deck.pop(0))
+            time.sleep(1)
+            clear_Screen()
             show_Score(player_Cards, computer_Cards, computer_Turn)
         if get_Points(computer_Cards) > 21:
-            print("YOU WIN")
+            clear_Screen()
+            show_Score(player_Cards, computer_Cards, computer_Turn)
+            print("YOU WIN - DEALER BUST")
             computer_Turn = False
             break
         else:
             if get_Points(player_Cards) > get_Points(computer_Cards):
+                clear_Screen()
+                show_Score(player_Cards, computer_Cards, computer_Turn)
                 print("YOU WIN")
                 computer_Turn = False
                 break
+            elif get_Points(player_Cards) < get_Points(computer_Cards):
+                clear_Screen()
+                show_Score(player_Cards, computer_Cards, computer_Turn)
+                print("COMPUTER WINS")
+                computer_Turn = False
+                break
             else:
+                clear_Screen()
+                show_Score(player_Cards, computer_Cards, computer_Turn)
                 print("TIE")
                 computer_Turn = False
                 break
 
     if input("Would you like to play again? Y/N").lower()[0] == "n":
         play_Again = False
+    else:
+        clear_Screen()
