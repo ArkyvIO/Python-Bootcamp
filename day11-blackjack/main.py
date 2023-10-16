@@ -4,7 +4,7 @@ import time
 from dictionary import deck_of_cards
 
 play_Again = True
-playing_Hand = True
+game_Over = False
 
 def shuffle_cards(num_Decks):
     deck_to_shuffle = []
@@ -42,21 +42,14 @@ def show_Score(player_Cards, computer_Cards, computer_Turn):
 def clear_Screen():
     os.system("cls" if os.name == "nt" else "clear")
 
+print("Welcome to BlackJack!") # Print welcome screen
+print("--------------------")
 
 while play_Again: # We will stop the program if the player doesn't want to play again, but need to start the loop at least once
     computer_Turn = False # The player will go first, so computer_Turn should be false
     player_Turn = True # The player will go first, so player_Turn should be true
     num_Decks = 2 # We will use 2 decks unless the player wants one, choice to be implemented later
     busted = False # Boolean for if player busts
-
-    print("Welcome to BlackJack!") # Print welcome screen
-    print("--------------------")
-    if input("Are you ready to play? Y/N: ").lower()[0] == "y":
-        clear_Screen()
-    else:
-        print("Really? Then why did you start the program?")
-        time.sleep(3)
-        break
 
     deck = shuffle_cards(num_Decks) # Shuffle the deck
 
@@ -92,10 +85,10 @@ while play_Again: # We will stop the program if the player doesn't want to play 
 
     # Computer phase
     while computer_Turn:
-        show_Score()
+        show_Score(player_Cards, computer_Cards, computer_Turn)
         while get_Points(computer_Cards) < 17:
             computer_Cards.append(deck.pop(0))
-            show_Score()
+            show_Score(player_Cards, computer_Cards, computer_Turn)
         if get_Points(computer_Cards) > 21:
             print("YOU WIN")
             computer_Turn = False
@@ -110,4 +103,5 @@ while play_Again: # We will stop the program if the player doesn't want to play 
                 computer_Turn = False
                 break
 
-    play_Again = False
+    if input("Would you like to play again? Y/N").lower()[0] == "n":
+        play_Again = False
