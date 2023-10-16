@@ -6,6 +6,8 @@ def clear_Screen():
     os.system("cls" if os.name == "nt" else "clear")
 
 keep_Playing = True
+HARD = 1
+EASY = 0
 
 while keep_Playing:
     # Print logo
@@ -15,23 +17,19 @@ while keep_Playing:
     difficulty = 0 # 1 = Hard / 0 = Easy
     turns = 0
     guessed = False
-    number = random.randint(1,100)
 
     while not diff_Set:
-        difficulty_input = input("Would you like to play on (H)ard or (E)asy mode? ")
-
-        if difficulty_input == "":
-            difficulty_input = input("Please enter something. You entered nothing. ")
-        elif difficulty_input.lower()[0] == "h":
+        difficulty_input = input("Would you like to play on (H)ard or (E)asy mode? ").lower()
+        if difficulty_input and difficulty_input[0] == "h":
             difficulty = 1
             diff_Set = True
-        elif difficulty_input.lower()[0] == "e":
+        elif difficulty_input and difficulty_input[0] == "e":
             difficulty = 0
             diff_Set = True
         else:
-            difficulty_input = input("That was not understood, please try again. ")
+            print("Invalid input. Please try again.")
 
-    if difficulty == 1:
+    if difficulty == HARD:
         print("Difficulty is set to: HARD")
         turns = 5
         time.sleep(1)
@@ -45,17 +43,11 @@ while keep_Playing:
     random_Num = random.randint(1,100)    
 
     while not guessed and not game_Over:
-        guess = input("Guess a number between 1 and 100: ")
-        guess_Accepted = False
-        
-        while not guess_Accepted:
-            if guess == "":
-                guess = input("You entered nothing. Try again: ")
-            elif guess.isnumeric():
-                guess_Accepted = True
-                guess = int(guess)
-            else:
-                guess = input("That isn't a number. Try again: ")
+        try:
+            guess = int(input("Guess a number between 1 and 100: "))
+        except ValueError:
+            print("Invalid input. Please enter a number.")
+            continue
 
         if guess == random_Num:
             guessed = True
