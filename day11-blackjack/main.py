@@ -103,8 +103,10 @@ while play_Again: # We will stop the program if the player doesn't want to play 
                 computer_Turn = True
         else:
             clear_Screen()
+            computer_Turn = True
             show_Score(player_Cards, computer_Cards, computer_Turn)
             print("BUSTED")
+            computer_Turn = False
 
     # Computer phase
     while computer_Turn:
