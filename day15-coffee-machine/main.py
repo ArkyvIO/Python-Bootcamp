@@ -1,32 +1,26 @@
-MENU = {
-    "espresso": {
-        "ingredients": {
-            "water": 50,
-            "coffee": 18,
-        },
-        "cost": 1.5,
-    },
-    "latte": {
-        "ingredients": {
-            "water": 200,
-            "milk": 150,
-            "coffee": 24,
-        },
-        "cost": 2.5,
-    },
-    "cappuccino": {
-        "ingredients": {
-            "water": 250,
-            "milk": 100,
-            "coffee": 24,
-        },
-        "cost": 3.0,
-    }
-}
+from defs import *
 
-resources = {
-    "water": 300,
-    "milk": 200,
-    "coffee": 100,
-}
+profit = 0
 
+while True:
+    # Get user choice and money for choice
+    selection = get_user_choice()
+
+    if not check_resources(MENU[selection]["ingredients"]):        
+        refill_ingredients()
+
+    if not check_funds_available(selection):
+        dots = ""
+        for x in range(3):
+            clear_Screen()
+            print(f"You have not entered enough money for this selection. Try again.{dots}")
+            dots += "."
+            sleep(1)
+        continue
+
+    subtract_resources(selection)
+    profit_and_change(selection)
+
+    print(f"Your {selection} has been dispensed. Thank you and enjoy!")
+
+    sleep(3)
