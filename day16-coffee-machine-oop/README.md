@@ -1,21 +1,26 @@
-# Day 16
+# Day 16: Object-Oriented Coffee Machine Program with Module Importing
 
-# Coffee Machine - OOP
+## Project Description
 
-A coffee machine program that handles money to make coffee
+The Day 16 project involves creating a simulated coffee machine program in Python with an emphasis on object-oriented programming (OOP). This program extends the functionalities of the previously developed coffee machine by implementing OOP principles using classes and objects. Additionally, this project introduces the use of external modules like "prettytables" to enhance the program's output for a more visually appealing user experience. To work with project-specific modules, a new virtual environment was created, and project-only modules were installed using pip for Python.
 
-## Description
+## Key Concepts Applied
 
-This project is part of my journey through the "100 Days of Code" course on Udemy. I work on various Python projects to enhance my skills and understanding of Python programming. This specific project involves creating a coffee machine program that manages money transactions to make coffee.
-
-## Course Link
-
-[100 Days of Code on Udemy](https://www.udemy.com/course/100-days-of-code/)
+- **Object-Oriented Programming (OOP):** Implementing classes and objects to model coffee machine components and functionalities in a more structured manner.
+- **Module Importing:** Importing and utilizing external modules, such as "prettytables," to enhance the program's output and aesthetics.
+- **Class Usage:** Accessing and utilizing predefined classes within the program to handle coffee machine functionalities.
+- **Virtual Environment Creation:** Setting up a new virtual environment for the project to manage project-specific dependencies and modules.
+- **Pip and Module Installation:** Using pip to install project-only modules, ensuring they are isolated within the virtual environment for the project.
 
 ## Project Progress
 
-- [x] Define project goals
-- [x] Set up the initial file structure
-- [x] Implement basic functionalities
-- [ ] Improve user interface
-- [ ] Implement advanced payment handling
+- [x] Define the structure and objectives of the simulated coffee machine program with OOP principles
+- [x] Utilize predefined classes to model coffee machine components and functionalities
+- [x] Import and utilize external modules like "prettytables" for improved program output
+- [x] Set up a new virtual environment for the project and install project-specific modules using pip
+- [ ] Complete the object-oriented coffee machine program integrating OOP principles and module importing
+
+## Code Snippet - OOP Coffee Machine Program Integration
+
+```python
+#TBD
