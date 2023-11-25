@@ -2,7 +2,7 @@
 
 ## Project Description
 
-For Day 5, I worked on a Password Generator project using Python. This project focused on implementing Python loops (`for` and `while`), using random numbers, and incorporating `if` statements. The Password Generator generates secure passwords based on user-defined parameters.
+For the Day 5 project, I worked on a Password Generator project using Python. This project focused on implementing Python loops (`for` and `while`), using random numbers, and incorporating `if` statements. The Password Generator generates secure passwords based on user-defined parameters.
 
 ## Concepts Learned
 
