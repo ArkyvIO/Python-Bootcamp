@@ -63,16 +63,6 @@ def get_user_choice():
             print("That is not an available item. Try again.")
 
 def check_resources(selection_ingredients):
-    # insufficient_resources = [ingredient for ingredient in selection_ingredients if ingredient != "water" and selection_ingredients[ingredient] > resources.get(ingredient, 0)]
-
-    # if insufficient_resources:
-    #     print("Too low on:")
-    #     for ingredient in insufficient_resources:
-    #         print(ingredient)
-    #     return False
-    # else:
-    #     return True
-
     insufficient_resources = [ingredient for ingredient, amount in selection_ingredients.items() if ingredient != "water" and amount > resources[ingredient]["amount"]]
 
     if insufficient_resources:
