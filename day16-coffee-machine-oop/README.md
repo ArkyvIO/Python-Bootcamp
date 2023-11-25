@@ -12,7 +12,7 @@ This project is part of my journey through the "100 Days of Code" course on Udem
 
 [100 Days of Code on Udemy](https://www.udemy.com/course/100-days-of-code/)
 
-## Day Progress
+## Project Progress
 
 - [x] Define project goals
 - [x] Set up the initial file structure
