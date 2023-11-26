@@ -23,4 +23,18 @@ The Day 16 project involves creating a simulated coffee machine program in Pytho
 ## Code Snippet - OOP Coffee Machine Program Integration
 
 ```python
-#TBD
+def make_table(menu, menu_options, menu_options_prices):
+    
+    menu_table = PrettyTable()
+
+    for drink in menu_options:
+        if menu.find_drink(drink) != "none":
+            menu_options_prices.append(menu.find_drink(drink).cost)
+
+    for x in range(len(menu_options)):
+        menu_options[x] = menu_options[x].capitalize()
+
+    menu_table.add_column("Drinks", menu_options)
+    menu_table.add_column("Prices", menu_options_prices)
+
+    return menu_table
