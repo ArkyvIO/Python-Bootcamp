@@ -18,7 +18,7 @@ The Day 16 project involves creating a simulated coffee machine program in Pytho
 - [x] Utilize predefined classes to model coffee machine components and functionalities
 - [x] Import and utilize external modules like "prettytables" for improved program output
 - [x] Set up a new virtual environment for the project and install project-specific modules using pip
-- [ ] Complete the object-oriented coffee machine program integrating OOP principles and module importing
+- [x] Complete the object-oriented coffee machine program integrating OOP principles and module importing
 
 ## Code Snippet - OOP Coffee Machine Program Integration
 
