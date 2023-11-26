@@ -23,13 +23,24 @@ while True:
     # Check for errors in input and keep attempting til correct
     selection = check_selection_errors(selection, menu_options) 
 
+    # Handle reports and exiting
     if selection == "r":
-        clear_Screen()
-        coffee_maker.report()
-        sleep(3)
+        for x in range(3, 0, -1):
+            clear_Screen()
+            coffee_maker.report()
+            money_machine.report()
+            print(f"Returning in {x} seconds...")
+            sleep(1)
         continue
     elif selection == "o":
         sys.exit()
 
-    
+    # Assign drink selection once validated
+    drink = menu.find_drink(selection)
+
+    # Check if resources are available to make drink
+    if not coffee_maker.is_resource_sufficient(drink):
+        print("This machine does not have the required resources to make that selection. Please try again.")
+        continue
+
     
