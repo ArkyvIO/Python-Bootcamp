@@ -41,6 +41,16 @@ while True:
     # Check if resources are available to make drink
     if not coffee_maker.is_resource_sufficient(drink):
         print("This machine does not have the required resources to make that selection. Please try again.")
+        sleep(3)
         continue
 
-    
+    # # Get money for drink
+    # total_money_entered = get_coins(drink)
+
+    # Using already made money_machine, get money
+    if not money_machine.make_payment(drink.cost):
+        continue
+
+    # Make drink
+    coffee_maker.make_coffee(drink)
+    sleep(3)

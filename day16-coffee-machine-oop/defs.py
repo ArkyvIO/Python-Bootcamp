@@ -42,6 +42,26 @@ def check_selection_errors(selection, menu_options):
             return selection
         else:
             return "latte"
+        
+# def get_coins(drink):
+#     clear_Screen()
+#     print(f"Your selection costs ${drink.cost}")
+#     quarters = input("How many quarters would you like to enter?")
+#     dimes = input("How many dimes would you like to enter?")
+#     nickels = input("How many nickels would you like to enter?")
+#     total = 0
+
+#     if quarters.isnumeric():
+#         quarters = quarters * .25
+#         total += quarters
+#     if dimes.isnumeric():
+#         dimes = dimes * .10
+#         total += dimes
+#     if nickels.isnumeric():
+#         nickels = nickels * .05
+#         total += nickels
+
+#     return total
 
 def clear_Screen():
     os.system("cls" if os.name == "nt" else "clear")
