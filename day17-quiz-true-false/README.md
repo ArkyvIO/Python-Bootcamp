@@ -7,7 +7,7 @@ The Day 17 project aims to develop a true/false quiz application in Python, emph
 ## Key Concepts Applied
 
 - **Object-Oriented Programming (OOP):** Creation of classes and objects to manage quiz questions, answers, and scoring within the application.
-- **Class Creation:** Development of a 'Question' class with attributes, a class constructor (__init__()), and methods for managing quiz-related functionalities.
+- **Class Creation:** Development of a 'Question' class with attributes, a class constructor (**init**()), and methods for managing quiz-related functionalities.
 - **API Integration:** Use of the Open Trivia Database API to fetch true/false questions for the quiz application.
 - **Data Handling:** Creation of question objects from retrieved data, management of user input for true/false answers, and tracking of scores.
 - **OOP Principles Implementation:** Emphasis on encapsulation, abstraction, inheritance, and polymorphism in designing the quiz application.
