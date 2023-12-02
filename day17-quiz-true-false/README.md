@@ -15,13 +15,20 @@ The Day 17 project aims to develop a true/false quiz application in Python, emph
 ## Project Progress
 
 - [X] Define the 'Question' class structure with necessary attributes and methods
-- [ ] Implement fetching true/false questions from the Open Trivia Database API
-- [ ] Create a list of question objects based on the retrieved data
+- [X] Implement fetching true/false questions from the Open Trivia Database API
+- [X] Create a list of question objects based on the retrieved data
 - [X] Develop the 'next_question()' method to display new quiz questions iteratively
-- [ ] Enable user input for true/false answers and implement score tracking functionality
-- [ ] Finalize the true/false quiz application leveraging Object-Oriented Programming concepts
+- [X] Enable user input for true/false answers and implement score tracking functionality
+- [X] Finalize the true/false quiz application leveraging Object-Oriented Programming concepts
 
 ## Code Snippet - 'Question' Class Initialization and Method Structure
 
 ```python
-# TBD
+# API endpoint
+api_url = "https://opentdb.com/api.php?amount=10&category=18&difficulty=medium&type=boolean"
+
+# Make a GET request to the API endpoint
+response = requests.get(api_url)
+
+# Decode HTML from response
+decoded_question_text = html.unescape(current_question.text)
