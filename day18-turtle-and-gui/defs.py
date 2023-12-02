@@ -24,8 +24,10 @@ def draw_random_walk(turtle, steps):
     for _ in range(steps):
         turtle.color(random(), random(), random())
         turtle.forward(25)
-        if choice([True, False]):
+        action = choice(["no_change", "right", "left"])
+        if action == "no_change":
+            continue
+        elif action == "right":
             turtle.right(90)
         else:
             turtle.left(90)
-        
