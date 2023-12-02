@@ -29,9 +29,6 @@ if response.status_code == 200:
         # Append the new question to the question_list
         question_list.append(new_question)
 
-    # Replace the question_data with the API retrieved questions
-    print(question_list)
-
 else:
     print("Failed to retrieve data from the API, using backup list.")
     # Use question_data as a backup if the API call fails
