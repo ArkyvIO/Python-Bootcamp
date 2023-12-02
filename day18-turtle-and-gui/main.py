@@ -7,6 +7,8 @@ turtle = Turtle()
 turtle.shape("arrow")
 # Turtle line thickness, default 1
 turtle.pensize(10)
+# Turtle speed
+turtle.speed(8)
 
 # Draw a square
 # draw_square(turtle)
