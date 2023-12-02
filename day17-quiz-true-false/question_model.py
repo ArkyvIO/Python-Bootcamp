@@ -1,7 +1,7 @@
 # Create object for questions
 class Question:
     # Initialize each question with question and answer
-    def __init__(self, question, answer) -> None:
+    def __init__(self, text, answer) -> None:
         """Initalize a question
 
         Args:
@@ -9,6 +9,6 @@ class Question:
             answer (_type_): Answer to question
         """
         # Set question to question
-        self.question = question
+        self.text = text
         # Set answer to answer
         self.answer = answer

@@ -1,3 +1,5 @@
+import html
+
 class QuizBrain:
     
     # Initialize base object, has question num, list and score
@@ -10,7 +12,8 @@ class QuizBrain:
     def next_question(self):
         current_question = self.question_list[self.question_number]
         self.question_number += 1
-        user_answer = input(f"Question {self.question_number}: {current_question.question} --- True or False: ")
+        decoded_question_text = html.unescape(current_question.text)
+        user_answer = input(f"Question {self.question_number}: {decoded_question_text} --- True or False: ")
         # User input validation, should always be t or f for first letter of answer
         while True:
             if user_answer[0].lower() == "t" or user_answer[0].lower() == "f":
