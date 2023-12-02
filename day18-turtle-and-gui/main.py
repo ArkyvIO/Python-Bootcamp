@@ -1,14 +1,14 @@
 from turtle import Turtle, Screen
-from defs import draw_square, draw_dashed_line, draw_increasing_shapes, draw_random_walk
+from defs import draw_square, draw_dashed_line, draw_increasing_shapes, draw_random_walk, draw_spirograph
 
 # Create turtle
 turtle = Turtle()
 # Make the turtle an arrow
 turtle.shape("arrow")
 # Turtle line thickness, default 1
-turtle.pensize(10)
+turtle.pensize(5)
 # Turtle speed
-turtle.speed(8)
+turtle.speed(0)
 
 # Draw a square
 # draw_square(turtle)
@@ -20,7 +20,10 @@ turtle.speed(8)
 # draw_increasing_shapes(turtle, 10)
 
 # Draw random with step count
-draw_random_walk(turtle, 100)
+# draw_random_walk(turtle, 100)
+
+# Draw a spirograph
+draw_spirograph(turtle, 250, 50)
 
 # Create screen
 screen = Screen()
