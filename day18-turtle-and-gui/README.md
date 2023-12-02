@@ -18,7 +18,7 @@ The Day 18 project delves into the world of Turtle Graphics and a Graphical User
 ## Project Progress
 
 - [X] Understanding Turtle Graphics and exploring the documentation
-- [/] Drawing a square, dashed lines, and different shapes using Turtle
+- [ ] Drawing a square, dashed lines, and different shapes using Turtle
 - [ ] Generating a random walk pattern
 - [ ] Implementing Python tuples for random RGB color generation
 - [ ] Creating a spirograph using Turtle Graphics
