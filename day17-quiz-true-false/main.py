@@ -18,6 +18,8 @@ for question in question_data:
 
 quiz = QuizBrain(question_list)
 
-while quiz.still_has_questions(question_list):
+while quiz.still_has_questions():
     quiz.next_question()
     
+print("All questions completed!")
+print(f"Your final score is {quiz.score}/{quiz.question_number}")
