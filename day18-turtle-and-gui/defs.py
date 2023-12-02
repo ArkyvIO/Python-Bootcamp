@@ -1,3 +1,5 @@
+from random import random
+
 def draw_square(turtle):
     for _ in range(4):
         turtle.forward(100)
@@ -12,6 +14,7 @@ def draw_dashed_line(turtle, line_length):
         
 def draw_increasing_shapes(turtle, iterations):
     for sides in range(3, iterations + 3):
+        turtle.color(random(), random(), random())
         for _ in range(sides):
             turtle.forward(100)
             turtle.right(360 / sides)
