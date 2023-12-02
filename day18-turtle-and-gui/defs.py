@@ -1,4 +1,4 @@
-from random import random
+from random import random, choice
 
 def draw_square(turtle):
     for _ in range(4):
@@ -19,3 +19,13 @@ def draw_increasing_shapes(turtle, iterations):
             turtle.forward(100)
             turtle.right(360 / sides)
         sides += 1
+
+def draw_random_walk(turtle, steps):
+    for _ in range(steps):
+        turtle.color(random(), random(), random())
+        turtle.forward(25)
+        if choice([True, False]):
+            turtle.right(90)
+        else:
+            turtle.left(90)
+        
