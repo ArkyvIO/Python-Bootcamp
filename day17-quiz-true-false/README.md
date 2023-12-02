@@ -17,7 +17,7 @@ The Day 17 project aims to develop a true/false quiz application in Python, emph
 - [X] Define the 'Question' class structure with necessary attributes and methods
 - [ ] Implement fetching true/false questions from the Open Trivia Database API
 - [ ] Create a list of question objects based on the retrieved data
-- [ ] Develop the 'next_question()' method to display new quiz questions iteratively
+- [X] Develop the 'next_question()' method to display new quiz questions iteratively
 - [ ] Enable user input for true/false answers and implement score tracking functionality
 - [ ] Finalize the true/false quiz application leveraging Object-Oriented Programming concepts
 
