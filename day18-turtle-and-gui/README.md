@@ -24,7 +24,7 @@ The Day 18 project delves into the world of Turtle Graphics and a Graphical User
 - [ ] Creating a spirograph using Turtle Graphics
 - [ ] Hirst Painting Project Part 1 - Extracting RGB values from images
 - [ ] Hirst Painting Project Part 2 - Drawing dots based on the extracted values
-- [ ] Exploring module import, package installation, and working with aliases
+- [X] Exploring module import, package installation, and working with aliases
 
 ## Code Snippet - Drawing a Square using Turtle Graphics
 

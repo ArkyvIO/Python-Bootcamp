@@ -1,5 +1,5 @@
 from turtle import Turtle, Screen
-from defs import draw_square
+from defs import draw_square, draw_dashed_line
 
 # Create turtle
 turtle = Turtle()
@@ -7,7 +7,10 @@ turtle = Turtle()
 turtle.shape("arrow")
 
 # Draw a square
-draw_square(turtle)
+# draw_square(turtle)
+
+# Draw dashed line
+draw_dashed_line(turtle, 100)
 
 # Create screen
 screen = Screen()
