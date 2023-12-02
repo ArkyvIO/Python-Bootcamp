@@ -9,3 +9,10 @@ def draw_dashed_line(turtle, line_length):
         turtle.up()
         turtle.forward(10)
         turtle.down()
+        
+def draw_increasing_shapes(turtle, iterations):
+    for sides in range(3, iterations + 3):
+        for _ in range(sides):
+            turtle.forward(100)
+            turtle.right(360 / sides)
+        sides += 1
