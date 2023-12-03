@@ -1,4 +1,4 @@
-from random import random, choice
+from random import random, choice, randint
 import colorgram
 
 def draw_square(turtle):
@@ -18,7 +18,7 @@ def draw_dashed_line(turtle, line_length):
 def draw_increasing_shapes(turtle, iterations):
     turtle.speed(5)
     for sides in range(3, iterations + 3):
-        turtle.color(random(), random(), random())
+        turtle.color(randint(0, 255), randint(0, 255), randint(0, 255))
         for _ in range(sides):
             turtle.forward(100)
             turtle.right(360 / sides)
@@ -27,7 +27,7 @@ def draw_increasing_shapes(turtle, iterations):
 def draw_random_walk(turtle, steps):
     turtle.speed(5)
     for _ in range(steps):
-        turtle.color(random(), random(), random())
+        turtle.color(randint(0, 255), randint(0, 255), randint(0, 255))
         turtle.forward(25)
         action = choice(["no_change", "right", "left"])
         if action == "no_change":

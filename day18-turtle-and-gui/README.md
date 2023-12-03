@@ -25,6 +25,7 @@ The Day 18 project delves into the world of Turtle Graphics and a Graphical User
 - [X] Hirst Painting Project Part 1 - Extracting RGB values from images
 - [X] Hirst Painting Project Part 2 - Drawing dots based on the extracted values
 - [X] Exploring module import, package installation, and working with aliases
+- [X] Implement user choice for type of graphics
 
 ## Code Snippet - Drawing a Square using Turtle Graphics
 
