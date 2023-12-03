@@ -1,4 +1,5 @@
 from random import random, choice
+import colorgram
 
 def draw_square(turtle):
     turtle.speed(3)
@@ -42,3 +43,32 @@ def draw_spirograph(turtle, radius, circles):
         turtle.color(random(), random(), random())
         turtle.circle(radius)
         turtle.left(360 / circles)
+        
+def hirst(turtle, image, num_colors, lines):
+    turtle.up()
+    spacing = 50
+    colors_rgb = []
+    colors = colorgram.extract(image, num_colors)
+    for color in colors:
+        r = color.rgb.r
+        g = color.rgb.g
+        b = color.rgb.b
+        color_to_add = (r, g, b)
+        if r < 235 and g < 235 and b < 235:
+            colors_rgb.append(color_to_add)
+    for row in range(lines):
+        for column in range(lines):
+            turtle.color(choice(colors_rgb))  # Randomly choose a color from colors_rgb list
+            turtle.dot(20)
+            turtle.forward(spacing)
+        if row % 2 == 0:
+            turtle.backward(spacing)
+            turtle.left(90)
+            turtle.forward(spacing)
+            turtle.left(90)
+        else:
+            turtle.backward(spacing)
+            turtle.right(90)
+            turtle.forward(spacing)
+            turtle.right(90)
+            
