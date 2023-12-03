@@ -1,6 +1,5 @@
 from turtle import Turtle, Screen
 from defs import draw_square, draw_dashed_line, draw_increasing_shapes, draw_random_walk, draw_spirograph, hirst
-import os
 
 # Create turtle
 turtle = Turtle()

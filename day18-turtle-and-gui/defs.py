@@ -1,4 +1,4 @@
-from random import random, choice, randint
+from random import choice, randint
 import colorgram
 
 def draw_square(turtle):
@@ -40,7 +40,7 @@ def draw_random_walk(turtle, steps):
 def draw_spirograph(turtle, radius, circles):
     turtle.speed(0)
     for _ in range(circles):
-        turtle.color(random(), random(), random())
+        turtle.color(randint(0, 255), randint(0, 255), randint(0, 255))
         turtle.circle(radius)
         turtle.left(360 / circles)
         
